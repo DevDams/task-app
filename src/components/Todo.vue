@@ -87,46 +87,46 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data() {
+  data () {
     return {
       Todo: '',
       todos: []
     }
   },
-  mounted() {
-    if(localStorage.getItem("todos")) {
-      this.todos = JSON.parse(localStorage.getItem("todos"))
+  mounted () {
+    if (localStorage.getItem('todos')) {
+      this.todos = JSON.parse(localStorage.getItem('todos'))
     } else {
-      console.log("no notes save")
+      console.log('no notes save')
     }
   },
   methods: {
     // Add a new todo item
-    addTodo() {
-      this.todos.push({content: this.Todo, done: false})
-      localStorage.setItem("todos", JSON.stringify(this.todos))
+    addTodo () {
+      this.todos.push({ content: this.Todo, done: false })
+      localStorage.setItem('todos', JSON.stringify(this.todos))
       this.Todo = ''
     },
     // Remove a todo item
-    removeTodo(todo) {
+    removeTodo (todo) {
       const todoIndex = this.todos.indexOf(todo)
       this.todos.splice(todoIndex, 1)
-      localStorage.setItem("todos", JSON.stringify(this.todos))
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     },
     // Mark a todo item as done
-    done(todo) {
-      let list_item = document.querySelector('.list_item')
-      list_item.classList.toggle("check")
+    done (todo) {
+      const listItem = document.querySelector('.list_item')
+      listItem.classList.toggle('check')
       const todoIndex = this.todos.indexOf(todo)
       this.todos[todoIndex].done = !this.todos[todoIndex].done
-      localStorage.setItem("todos", JSON.stringify(this.todos))
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     },
     // Mark all the todo item as done
-    allDone() {
+    allDone () {
       this.todos.forEach(todo => {
         todo.done = true
       })
-      localStorage.setItem("todos", JSON.stringify(this.todos))
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     }
   }
 }
@@ -256,7 +256,6 @@ h2 {
 .tout_cocher button:hover {
   background-color: #06d69ebe;
 }
-
 
 .list_item {
   top: 50px;

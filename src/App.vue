@@ -20,6 +20,9 @@ export default {
 
 body {
   background-color: #118ab2;
+  background-image: url('./assets/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #0d0d0d;
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 500;
